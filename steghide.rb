@@ -1,6 +1,6 @@
 class Steghide < Formula
-  desc "Steghide is a steganography program that is able to hide data in various kinds of image- and audio-files."
-  homepage "http://steghide.sourceforge.net"
+  desc "Steganography program able to hide data in image and audio files"
+  homepage "https://steghide.sourceforge.io"
   url "https://downloads.sourceforge.net/project/steghide/steghide/0.5.1/steghide-0.5.1.tar.gz"
   sha256 "78069b7cfe9d1f5348ae43f918f06f91d783c2b3ff25af021e6a312cf541b47b"
 
@@ -10,10 +10,9 @@ class Steghide < Formula
   depends_on "mhash"
 
   patch do
-    url "https://raw.githubusercontent.com/willi123yao/homebrew-repo/master/steghide-gcc.diff"
+    url "https://raw.githubusercontent.com/willi123yao/homebrew-repo/09febd5a89900441124c762fb73b092462f750c0/steghide-gcc.diff"
     sha256 "75fd41eeecdf5446d5d693fefc651ba3429c70e3133fbb2c0b0d78615ccbdaf0"
   end
-
 
   def install
     system "./configure", "--disable-debug", "--prefix=#{prefix}"
@@ -23,6 +22,6 @@ class Steghide < Formula
   end
 
   test do
-    system bin/"foobar", "--version"
+    system bin/"steghide", "--version"
   end
 end
