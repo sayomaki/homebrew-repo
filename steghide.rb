@@ -5,6 +5,7 @@ class Steghide < Formula
   sha256 "78069b7cfe9d1f5348ae43f918f06f91d783c2b3ff25af021e6a312cf541b47b"
 
   depends_on "gettext" => :build
+  depends_on "libtool" => :build
   depends_on "mcrypt"
   depends_on "mhash"
 
