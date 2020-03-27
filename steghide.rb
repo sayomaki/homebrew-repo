@@ -10,7 +10,7 @@ class Steghide < Formula
   depends_on "mhash"
 
   bottle do
-    root_url "https://homebrew.bintray.com/bottles-repo"
+    root_url "https://rawcdn.githack.com/willi123yao/brew-repo/master/Bottles"
     sha256 "c26eb094300d208d478868e21ce799a64fb372cfea77e7c4a0bb08bb06337b62" => :mojave
   end
 
