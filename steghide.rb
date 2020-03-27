@@ -9,6 +9,11 @@ class Steghide < Formula
   depends_on "mcrypt"
   depends_on "mhash"
 
+  bottle do
+    root_url "https://homebrew.bintray.com/bottles-repo"
+    sha256 "c26eb094300d208d478868e21ce799a64fb372cfea77e7c4a0bb08bb06337b62" => :mojave
+  end
+
   patch do
     url "https://raw.githubusercontent.com/willi123yao/brew-repo/a415d8e1ceb8a9b9ed5211f83ac354f4f47b0216/Patches/steghide-gcc.diff"
     sha256 "75fd41eeecdf5446d5d693fefc651ba3429c70e3133fbb2c0b0d78615ccbdaf0"
