@@ -15,7 +15,7 @@ class Steghide < Formula
   depends_on "mhash"
 
   patch do
-    url "https://raw.githubusercontent.com/willi123yao/brew-repo/a415d8e1ceb8a9b9ed5211f83ac354f4f47b0216/Patches/steghide-gcc.diff"
+    url "https://rawcdn.githack.com/willi123yao/brew-repo/a415d8e1ceb8a9b9ed5211f83ac354f4f47b0216/Patches/steghide-gcc.diff"
     sha256 "75fd41eeecdf5446d5d693fefc651ba3429c70e3133fbb2c0b0d78615ccbdaf0"
   end
 
