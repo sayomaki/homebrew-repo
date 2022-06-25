@@ -5,6 +5,12 @@ class Steghide < Formula
   sha256 "78069b7cfe9d1f5348ae43f918f06f91d783c2b3ff25af021e6a312cf541b47b"
   license "GPL-1.0-or-later"
 
+  bottle do
+    root_url "https://github.com/willi123yao/homebrew-repo/releases/download/steghide-0.5.1"
+    sha256 big_sur:      "b73db063978bf7889415fac5ce21c151ee5ac756e052cbc3bb13720af5694125"
+    sha256 x86_64_linux: "5cb1433496720a1a0c7de43f5726867cda2770126960ec33234efc5780cf6057"
+  end
+
   depends_on "libtool" => :build
   depends_on "gettext"
   depends_on "jpeg"
