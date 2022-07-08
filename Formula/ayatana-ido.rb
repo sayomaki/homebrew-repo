@@ -6,6 +6,12 @@ class AyatanaIdo < Formula
   license "LGPL-2.1-or-later"
   head "https://github.com/AyatanaIndicators/ayatana-ido.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/willi123yao/homebrew-repo/releases/download/ayatana-ido-0.9.2"
+    sha256 cellar: :any,                 big_sur:      "46a4f2e690ba11761006a3c84a6433c7fef874e57aebd2e97a07376c8e19c09a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9bbecb893518e60ecf2c7530325d9b70c4cb89a8f5ad1af215a6726d3dc6308d"
+  end
+
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "vala" => :build
