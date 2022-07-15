@@ -1,0 +1,41 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index ddb2fec..7b00c62 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -140,8 +140,6 @@ target_include_directories("${ayatana_indicator_gtkver}" PUBLIC ${PROJECT_DEPS_I
+ target_include_directories("${ayatana_indicator_gtkver}" PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+ target_include_directories("${ayatana_indicator_gtkver}" PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+ target_link_options("${ayatana_indicator_gtkver}" PRIVATE "-Wl,--version-script=${CMAKE_CURRENT_SOURCE_DIR}/indicator.symbols")
+-target_link_libraries("${ayatana_indicator_gtkver}" ${PROJECT_DEPS_LIBRARIES} ${EXTRA_LIBS})
++target_link_libraries("${ayatana_indicator_gtkver}" ${PROJECT_DEPS_LINK_LIBRARIES} ${EXTRA_LIBS})
+ add_dependencies("${ayatana_indicator_gtkver}" "src-generated")
+-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/lib${ayatana_indicator_gtkver}.so" DESTINATION "${CMAKE_INSTALL_FULL_LIBDIR}")
+-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/lib${ayatana_indicator_gtkver}.so.${ABI_VERSION}" DESTINATION "${CMAKE_INSTALL_FULL_LIBDIR}")
+-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/lib${ayatana_indicator_gtkver}.so.${ABI_VERSION}.0.0" DESTINATION "${CMAKE_INSTALL_FULL_LIBDIR}")
++install(TARGETS "${ayatana_indicator_gtkver}" DESTINATION "${CMAKE_INSTALL_FULL_LIBDIR}")
+diff --git a/src/indicator-desktop-shortcuts.c b/src/indicator-desktop-shortcuts.c
+index be1d632..d2cc162 100644
+--- a/src/indicator-desktop-shortcuts.c
++++ b/src/indicator-desktop-shortcuts.c
+@@ -25,7 +25,7 @@ License along with this library. If not, see
+ #include "config.h"
+ #endif
+ 
+-#include <gio/gdesktopappinfo.h>
++#include <gio/gio.h>
+ #include "indicator-desktop-shortcuts.h"
+ 
+ #define ACTIONS_KEY               "Actions"
+diff --git a/tools/CMakeLists.txt b/tools/CMakeLists.txt
+index 14ce777..18bf429 100644
+--- a/tools/CMakeLists.txt
++++ b/tools/CMakeLists.txt
+@@ -4,7 +4,7 @@ if (FLAVOUR_GTK3 AND ENABLE_IDO)
+     add_executable("ayatana-indicator-loader3" indicator-loader.c)
+     target_include_directories("ayatana-indicator-loader3" PUBLIC ${PROJECT_DEPS_INCLUDE_DIRS})
+     target_include_directories("ayatana-indicator-loader3" PUBLIC "${CMAKE_SOURCE_DIR}/src")
+-    target_link_libraries("ayatana-indicator-loader3" ${PROJECT_DEPS_LIBRARIES} "-L${CMAKE_BINARY_DIR}/src" -layatana-indicator3)
++    target_link_libraries("ayatana-indicator-loader3" ${PROJECT_DEPS_LINK_LIBRARIES} "-L${CMAKE_BINARY_DIR}/src" -layatana-indicator3)
+     add_dependencies("ayatana-indicator-loader3" "ayatana-indicator3")
+ 
+     install(FILES "${CMAKE_CURRENT_BINARY_DIR}/ayatana-indicator-loader3" DESTINATION "${CMAKE_INSTALL_FULL_LIBEXECDIR}/${PROJECT_NAME}")
