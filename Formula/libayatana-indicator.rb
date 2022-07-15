@@ -6,6 +6,12 @@ class LibayatanaIndicator < Formula
   license "GPL-3.0-only"
   head "https://github.com/AyatanaIndicators/libayatana-indicator.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/willi123yao/homebrew-repo/releases/download/libayatana-indicator-0.9.1"
+    sha256 cellar: :any,                 big_sur:      "2dacb6e64cd1c1fbe8f5774a57b9555b050c8f34694cce621b8a2342f2abddef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a179f1c62285f1439c1f6e913c1139b2040bd3afdd86a215e554e13987e6475e"
+  end
+
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "vala" => :build
