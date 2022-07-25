@@ -8,9 +8,10 @@ class AyatanaIdo < Formula
   head "https://github.com/AyatanaIndicators/ayatana-ido.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/willi123yao/homebrew-repo/releases/download/ayatana-ido-0.9.2"
-    sha256 cellar: :any,                 big_sur:      "46a4f2e690ba11761006a3c84a6433c7fef874e57aebd2e97a07376c8e19c09a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9bbecb893518e60ecf2c7530325d9b70c4cb89a8f5ad1af215a6726d3dc6308d"
+    root_url "https://github.com/willi123yao/homebrew-repo/releases/download/ayatana-ido-0.9.2_1"
+    sha256 cellar: :any,                 big_sur:      "8f8003583e67ed11ecdafbb06aadf7b0ce519408075603cab753b60fafbd02e3"
+    sha256 cellar: :any,                 catalina:     "8e20551c3a6cb7a3004680ede03d09ada386481ec5aefe93b97f740966172439"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "377803fce51047384e4046804d16e0c59e1eb4208dbf1585487d7635f9475afd"
   end
 
   depends_on "cmake" => :build
