@@ -4,6 +4,7 @@ class AyatanaIdo < Formula
   url "https://github.com/AyatanaIndicators/ayatana-ido/archive/0.9.2.tar.gz"
   sha256 "b166e7a160458e4a71f6086d2e4e97e18cf1ac584231a4b9f1f338914203884c"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https://github.com/AyatanaIndicators/ayatana-ido.git", branch: "main"
 
   bottle do
@@ -13,6 +14,7 @@ class AyatanaIdo < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "glib-utils" => :build
   depends_on "gobject-introspection" => :build
   depends_on "vala" => :build
   depends_on "glib"
