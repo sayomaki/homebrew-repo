@@ -4,6 +4,7 @@ class LibayatanaIndicator < Formula
   url "https://github.com/AyatanaIndicators/libayatana-indicator/archive/0.9.1.tar.gz"
   sha256 "15a8844265067652c06242736ece682622d73cedcccdf1c171ce27fba70ba689"
   license "GPL-3.0-only"
+  revision 1
   head "https://github.com/AyatanaIndicators/libayatana-indicator.git", branch: "main"
 
   bottle do
@@ -13,6 +14,7 @@ class LibayatanaIndicator < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "glib-utils" => :build
   depends_on "gobject-introspection" => :build
   depends_on "vala" => :build
   depends_on "glib"
