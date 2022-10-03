@@ -1,8 +1,8 @@
 class LibayatanaIndicator < Formula
   desc "Ayatana Application Indicators Shared Library"
   homepage "https://github.com/AyatanaIndicators/libayatana-indicator"
-  url "https://github.com/AyatanaIndicators/libayatana-indicator/archive/0.9.1.tar.gz"
-  sha256 "15a8844265067652c06242736ece682622d73cedcccdf1c171ce27fba70ba689"
+  url "https://github.com/AyatanaIndicators/libayatana-indicator/archive/0.9.2.tar.gz"
+  sha256 "e38546cdd160573d1ba6819bd33fdeee0aabc67c0a08d709d582d85f3868ee64"
   license "GPL-3.0-only"
   head "https://github.com/AyatanaIndicators/libayatana-indicator.git", branch: "main"
 
@@ -104,10 +104,14 @@ class LibayatanaIndicator < Formula
         }
     EOS
 
-    flags = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs gtk+-3.0").strip.split
-    flags << "-I#{include}/libayatana-indicator3-0.4"
-    flags << "-L#{lib}"
-    flags << "-layatana-indicator3"
+    pkgconfig = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs gtk+-3.0").strip.split
+    pkgconfig << "-I#{include}/libayatana-indicator3-0.4"
+    pkgconfig << "-L#{lib}"
+    pkgconfig << "-layatana-indicator3"
+
+    flags = %w[-v]
+    flags += pkgconfig
+
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
 
