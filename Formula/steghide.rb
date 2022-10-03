@@ -4,6 +4,7 @@ class Steghide < Formula
   url "https://downloads.sourceforge.net/project/steghide/steghide/0.5.1/steghide-0.5.1.tar.gz"
   sha256 "78069b7cfe9d1f5348ae43f918f06f91d783c2b3ff25af021e6a312cf541b47b"
   license "GPL-1.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/willi123yao/homebrew-repo/releases/download/steghide-0.5.1"
@@ -18,7 +19,7 @@ class Steghide < Formula
   depends_on "mhash"
 
   patch do
-    url "https://rawcdn.githack.com/willi123yao/brew-repo/a415d8e1ceb8a9b9ed5211f83ac354f4f47b0216/Patches/steghide-gcc.diff"
+    url "https://raw.githubusercontent.com/willi123yao/homebrew-repo/a51e8fdfcd1d8cc37390821bf78452195a7b9f98/steghide-gcc.diff"
     sha256 "75fd41eeecdf5446d5d693fefc651ba3429c70e3133fbb2c0b0d78615ccbdaf0"
   end
 
