@@ -7,9 +7,10 @@ class Steghide < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/willi123yao/homebrew-repo/releases/download/steghide-0.5.1"
-    sha256 big_sur:      "b73db063978bf7889415fac5ce21c151ee5ac756e052cbc3bb13720af5694125"
-    sha256 x86_64_linux: "5cb1433496720a1a0c7de43f5726867cda2770126960ec33234efc5780cf6057"
+    root_url "https://github.com/willi123yao/homebrew-repo/releases/download/steghide-0.5.1_1"
+    sha256 big_sur:      "9a5b7c6e81c3055b7ae8015a29414b345ea63b18f365f2c23fbf9ab06fa46b81"
+    sha256 catalina:     "fbd4a185b6508cd879f2f8b18792f77ded851e15d168d5416767b29405fa5b51"
+    sha256 x86_64_linux: "4f40af64d5230f3e1bc3bf8da6fb73a4f4ed960eefd7535a94d1f79ed903f7d3"
   end
 
   depends_on "libtool" => :build
