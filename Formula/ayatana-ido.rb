@@ -48,10 +48,20 @@ class AyatanaIdo < Formula
       }
     EOS
 
-    flags = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs gtk+-3.0").strip.split
-    flags << "-I#{include}/libayatana-ido3-0.4"
-    flags << "-L#{lib}"
-    flags << "-layatana-ido3-0.4"
+    pkgconfig = shell_output("#{Formula["pkg-config"].opt_bin}/pkg-config --cflags --libs gtk+-3.0").strip.split
+    pkgconfig << "-I#{include}/libayatana-ido3-0.4"
+    pkgconfig << "-L#{lib}"
+    pkgconfig << "-layatana-ido3-0.4"
+
+    flags = %w[-v]
+    if OS.linux?
+      flags += %W[
+        -Wl,--rpath=#{Formula["glibc"].opt_lib}
+        -L#{Formula["glibc"].opt_lib}
+      ]
+    end
+    flags += pkgconfig
+
     system ENV.cc, "test.cpp", "-o", "test", *flags
     assert_predicate testpath/"test", :exist?
 
