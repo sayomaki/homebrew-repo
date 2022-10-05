@@ -8,8 +8,11 @@ class AyatanaIdo < Formula
 
   bottle do
     root_url "https://github.com/willi123yao/homebrew-repo/releases/download/ayatana-ido-0.9.2"
-    sha256 cellar: :any,                 big_sur:      "46a4f2e690ba11761006a3c84a6433c7fef874e57aebd2e97a07376c8e19c09a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "9bbecb893518e60ecf2c7530325d9b70c4cb89a8f5ad1af215a6726d3dc6308d"
+    rebuild 1
+    sha256 cellar: :any,                 monterey:     "c72e07931ba69e57b9c2ad9cf002d98c5987b2d2a678aa30cde740eaf95e5560"
+    sha256 cellar: :any,                 big_sur:      "7992c58ba3377921c0ab2ec1e1758f6db2d55f496f3b56181d03d0fa5f360ed7"
+    sha256 cellar: :any,                 catalina:     "c470bfa40e793edb2fb5a5edb64aa4edeba033d6198cc85bbf8e09f7cc6a37dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fd3821c5757b65af98c4b63978ca1018d50257be81a541cccafd7e38c8a12a90"
   end
 
   depends_on "cmake" => :build
