@@ -5,6 +5,11 @@ class Libwpe < Formula
   sha256 "c073305bbac5f4402cc1c8a4753bfa3d63a408901f86182051eaa5a75dd89c00"
   license "BSD-2-Clause"
 
+  bottle do
+    root_url "https://github.com/willi123yao/homebrew-repo/releases/download/libwpe-1.14.0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "daed1f4f6bed85362bcdaea057270e179bdabf95ce0150794591a1812a04b7ac"
+  end
+
   depends_on "cmake" => :build
   depends_on "libxkbcommon"
   depends_on :linux
