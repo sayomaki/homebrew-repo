@@ -1,9 +1,11 @@
-name: brew test-bot
+name: Brew TestBot
+
 on:
   push:
     branches:
       - main
   pull_request:
+
 jobs:
   test-bot:
     strategy:
