@@ -1,8 +1,8 @@
 class AyatanaIdo < Formula
   desc "Ayatana Indicator Display Objects"
   homepage "https://github.com/AyatanaIndicators/ayatana-ido"
-  url "https://github.com/AyatanaIndicators/ayatana-ido/archive/0.9.2.tar.gz"
-  sha256 "b166e7a160458e4a71f6086d2e4e97e18cf1ac584231a4b9f1f338914203884c"
+  url "https://github.com/AyatanaIndicators/ayatana-ido/archive/0.10.1.tar.gz"
+  sha256 "26187915a6f3402195e2c78d9e8a54549112a3cd05bb2fbe2059d3e78fc0e071"
   license "LGPL-2.1-or-later"
   head "https://github.com/AyatanaIndicators/ayatana-ido.git", branch: "main"
 
@@ -18,13 +18,9 @@ class AyatanaIdo < Formula
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "vala" => :build
+  depends_on "pkg-config" => :test
   depends_on "glib"
   depends_on "gtk+3"
-
-  patch do
-    url "https://raw.githubusercontent.com/willi123yao/homebrew-repo/1c50976446551667f9a72430dba6b3f1ffe73711/ayatana-ido.patch"
-    sha256 "833a0c80c9331193de3d52d9495943bd3e536c5f0a91ea289a8aab5a6a6c0afd"
-  end
 
   def install
     mkdir "build" do
