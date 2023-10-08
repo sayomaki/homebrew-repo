@@ -7,12 +7,10 @@ class AyatanaIdo < Formula
   head "https://github.com/AyatanaIndicators/ayatana-ido.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/willi123yao/homebrew-repo/releases/download/ayatana-ido-0.9.2"
-    rebuild 1
-    sha256 cellar: :any,                 monterey:     "c72e07931ba69e57b9c2ad9cf002d98c5987b2d2a678aa30cde740eaf95e5560"
-    sha256 cellar: :any,                 big_sur:      "7992c58ba3377921c0ab2ec1e1758f6db2d55f496f3b56181d03d0fa5f360ed7"
-    sha256 cellar: :any,                 catalina:     "c470bfa40e793edb2fb5a5edb64aa4edeba033d6198cc85bbf8e09f7cc6a37dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fd3821c5757b65af98c4b63978ca1018d50257be81a541cccafd7e38c8a12a90"
+    root_url "https://github.com/sayomaki/homebrew-repo/releases/download/ayatana-ido-0.10.1"
+    sha256 cellar: :any,                 ventura:      "ea95621d3b73e38a13cf8f744c2879a8b01546afdfa2b722df1094d8174044ad"
+    sha256 cellar: :any,                 monterey:     "375b83ef69bce422380357c412a7b3fd15bfa7f191eefd0cd1f2835e2909cf74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5896efec43cbc41c63855724a66b4b66ae49ec8c2b1610bc5eb1b3d1e2e0ae46"
   end
 
   depends_on "cmake" => :build
