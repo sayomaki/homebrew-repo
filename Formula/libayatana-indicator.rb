@@ -7,11 +7,10 @@ class LibayatanaIndicator < Formula
   head "https://github.com/AyatanaIndicators/libayatana-indicator.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/willi123yao/homebrew-repo/releases/download/libayatana-indicator-0.9.2"
-    sha256 cellar: :any,                 monterey:     "d668d0f74b0dc7fdd2850b929e270223bfb9a039c5ca01cf50df12738a2591d3"
-    sha256 cellar: :any,                 big_sur:      "2ac197e6b9065ddab763cf2a369c18548ac181594518a91884e0b2543a2eb13e"
-    sha256 cellar: :any,                 catalina:     "d9afc5f1a9e30156ad4f734b443ec61069c01390ac898561cc3cac34c52f9782"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "344183b2ea7f6b18aba28f228e8c4c52ca188772658df51aed9433b4f670b0dc"
+    root_url "https://github.com/sayomaki/homebrew-repo/releases/download/libayatana-indicator-0.9.3"
+    sha256 cellar: :any,                 ventura:      "2d4e831fbe7188dd8271e7ec588ac09afed40f782639e06aafb04110b0fd9783"
+    sha256 cellar: :any,                 monterey:     "3429be285caf3692ce3fa6f096221d7555df03797c6083446e2101003a4f2a0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "55839e616d30ded62ec0f389789fd0e10f3ff3b2922c7a03cd1309d17e619d4d"
   end
 
   depends_on "cmake" => :build
