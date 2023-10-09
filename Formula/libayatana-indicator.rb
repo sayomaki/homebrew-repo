@@ -1,8 +1,8 @@
 class LibayatanaIndicator < Formula
   desc "Ayatana Application Indicators Shared Library"
   homepage "https://github.com/AyatanaIndicators/libayatana-indicator"
-  url "https://github.com/AyatanaIndicators/libayatana-indicator/archive/0.9.2.tar.gz"
-  sha256 "e38546cdd160573d1ba6819bd33fdeee0aabc67c0a08d709d582d85f3868ee64"
+  url "https://github.com/AyatanaIndicators/libayatana-indicator/archive/refs/tags/0.9.3.tar.gz"
+  sha256 "09c5456fcb430b6ee0626fafdf99a32eb8746b267d56ab2bd4c8a8dd6ca731da"
   license "GPL-3.0-only"
   head "https://github.com/AyatanaIndicators/libayatana-indicator.git", branch: "main"
 
@@ -17,12 +17,13 @@ class LibayatanaIndicator < Formula
   depends_on "cmake" => :build
   depends_on "gobject-introspection" => :build
   depends_on "vala" => :build
+  depends_on "pkg-config" => :test
   depends_on "glib"
   depends_on "gtk+3"
-  depends_on "willi123yao/repo/ayatana-ido"
+  depends_on "sayomaki/repo/ayatana-ido"
 
   patch do
-    url "https://raw.githubusercontent.com/willi123yao/homebrew-repo/a51e8fdfcd1d8cc37390821bf78452195a7b9f98/libayatana-indicator.patch"
+    url "https://raw.githubusercontent.com/sayomaki/homebrew-repo/a51e8fdfcd1d8cc37390821bf78452195a7b9f98/libayatana-indicator.patch"
     sha256 "f9556df06de53385018e5b5b300d7ba1cf6939a5b4e0ed9366bf8ca6beb52580"
   end
 
